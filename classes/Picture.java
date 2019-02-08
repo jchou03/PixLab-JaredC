@@ -97,7 +97,39 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+
+  public void keepOnlyBlue(){
+    Pixel[][] pixels = this.getPixels2D();
+    for(Pixel[] rowArray: pixels){
+      for(Pixel pix:rowArray){
+        pix.setGreen(0);
+        pix.setRed(0);
+      }
+    }
+  }
+
+  public void negate(){
+    Pixel[][] pixels = this.getPixels2D();
+    for(Pixel[] rowArray:pixels){
+      for(Pixel pix: rowArray){
+        pix.setGreen(255-pix.getGreen());
+        pix.setRed(255-pix.getRed());
+        pix.setBlue(255-pix.getBlue());
+      }
+    }
+  }
+
+  public void grayscale(){
+    Pixel[][] pixels = this.getPixels2D();
+    for(Pixel[] rowArray: pixels){
+      for(Pixel pix:rowArray){
+        int average = (pix.getRed() + pix.getBlue() + pix.getGreen())/3;
+        pix.setBlue(average);
+        pix.setRed(average);
+        pix.setGreen(average);
+      }
+    }
+  }
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -227,6 +259,7 @@ public class Picture extends SimplePicture
     beach.explore();
     beach.zeroBlue();
     beach.explore();
+    //Picture p = new SimplePicture();
   }
   
 } // this } is the end of class Picture, put all new methods before this

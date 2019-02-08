@@ -19,7 +19,27 @@ public class PictureTester
     // uncomment this in repl.it to test your code!!
     // beach.write("imagesOutput/beach.jpg");
   }
-  
+
+  public static void testKeepOnlyBlue(){
+    Picture bleh = new Picture("images/bleh.jpg");
+    bleh.explore();
+    bleh.keepOnlyBlue();
+    bleh.explore();
+  }
+
+  public static void testNegate(){
+    Picture bleh = new Picture("images/bleh.jpg");
+    bleh.explore();
+    bleh.negate();
+    bleh.explore();
+  }
+
+  public static void testGrayscale(){
+    Picture bleh = new Picture("images/bleh.jpg");
+    bleh.explore();
+    bleh.grayscale();
+    bleh.explore();
+  }
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -53,7 +73,7 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-  
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -61,12 +81,12 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    //testNegate();
-    //testGrayscale();
+    testNegate();
+    testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();

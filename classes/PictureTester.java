@@ -48,7 +48,26 @@ public class PictureTester
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
-  
+
+  public static void testMirrorVerticalLeftToRight(){
+    Picture bleh = new Picture("images/bleh.jpg");
+    bleh.explore();
+    bleh.mirrorVerticalRightToLeft();
+    bleh.explore();
+  }
+
+  public static void testMirrorHorizontal(){
+    Picture bleh = new Picture("images/bleh.jpg");
+    bleh.mirrorHorizontal();
+    bleh.explore();
+  }
+
+  public static void testMirrorHorizontalBottomToTop(){
+    Picture bleh = new Picture("images/bleh.jpg");
+    bleh.explore();
+    bleh.mirrorHorizontalBottomToTop();
+    bleh.explore();
+  }
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -85,10 +104,13 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    testNegate();
-    testGrayscale();
+    //testNegate();
+    //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
+    //testMirrorVerticalLeftToRight();
+    //testMirrorHorizontal();
+    testMirrorHorizontalBottomToTop();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();

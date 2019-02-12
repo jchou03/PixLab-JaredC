@@ -207,15 +207,41 @@ public class Picture extends SimplePicture
       // loop from 13 to just before the mirror point
       for (int col = 13; col < mirrorPoint; col++)
       {
-        
+        count++;
         leftPixel = pixels[row][col];      
         rightPixel = pixels[row]                       
                          [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+    System.out.println(count);
   }
-  
+
+  public void mirrorArms(int startRow, int startColumn, int endRow, int endColumn)
+  {
+    int mirrorPoint = startRow+((endRow-startRow)/2);
+    Pixel topPixel = null;
+    Pixel botPixel = null;
+    int count = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    System.out.println("In mirror arms method");
+    System.out.println("rows: " + startRow + ", mirrorPoint: " + mirrorPoint);
+    // loop through the rows
+    for (int row = startRow; row < mirrorPoint; row++)
+    {
+      System.out.println("In row!");
+      // loop from 13 to just before the mirror point
+      for (int col = startColumn; col < endColumn; col++)
+      {
+        System.out.println("row: " + row + ", column: " + col);
+        topPixel = pixels[row][col];
+        botPixel = pixels[mirrorPoint*2 + row][col];
+        botPixel.setColor(topPixel.getColor());
+      }
+    }
+    System.out.println("end of mirror arms method");
+  }
+
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture

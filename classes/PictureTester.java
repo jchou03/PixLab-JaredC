@@ -81,8 +81,16 @@ public class PictureTester
     Picture snowman = new Picture("images/snowman.jpg");
     snowman.explore();
     // (291, 253) (236,160)
-    snowman.mirrorArms(236,291,160,253);
+    snowman.mirrorArms(160,100,190 ,170);
+    snowman.mirrorArms(170,235,195 ,290);
     snowman.explore();
+  }
+
+  public static void testMirrorGull(){
+    Picture gull = new Picture("images/seagull.jpg");
+    gull.explore();
+    gull.mirrorGull(233,237,325,345);
+    gull.explore();
   }
 
   /** Method to test the collage method */
@@ -120,8 +128,8 @@ public class PictureTester
     //testMirrorHorizontal();
     //testMirrorHorizontalBottomToTop();
     //testMirrorTemple();
-    testMirrorArms();
-    //testMirrorGull();
+    //testMirrorArms();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();

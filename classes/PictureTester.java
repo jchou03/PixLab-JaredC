@@ -65,7 +65,7 @@ public class PictureTester
   public static void testMirrorHorizontalBottomToTop(){
     Picture bleh = new Picture("images/bleh.jpg");
     bleh.explore();
-    bleh.mirrorHorizontalBottomToTop();
+    bleh.mirrorHorizontalBotToTop();
     bleh.explore();
   }
   /** Method to test mirrorTemple */
@@ -81,22 +81,31 @@ public class PictureTester
     Picture snowman = new Picture("images/snowman.jpg");
     snowman.explore();
     // (291, 253) (236,160)
-    snowman.mirrorArms(160,100,190 ,170);
+/*    snowman.mirrorArms(160,100,190 ,170);
     snowman.mirrorArms(170,235,195 ,290);
     snowman.explore();
+*/  snowman.mirrorArms();
+snowman.explore();
   }
 
   public static void testMirrorGull(){
     Picture gull = new Picture("images/seagull.jpg");
     gull.explore();
-    gull.mirrorGull(233,237,325,345);
+    gull.mirrorGull();
+    //gull.mirrorGull(233,237,325,345);
     gull.explore();
+  }
+
+  public static void testMyCollage(){
+    Picture canvas = new Picture("images/640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
   }
 
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture canvas = new Picture("images/640x480.jpg");
     canvas.createCollage();
     canvas.explore();
   }
@@ -129,8 +138,9 @@ public class PictureTester
     //testMirrorHorizontalBottomToTop();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
+    testMyCollage();
     //testCollage();
     //testCopy();
     //testEdgeDetection();

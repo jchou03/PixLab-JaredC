@@ -113,9 +113,12 @@ snowman.explore();
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("images/swan.jpg");
+    Picture otherSwan = new Picture("images/swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
+    otherSwan.edgeDetection(10,true);
+    otherSwan.explore();
   }
 
   /** Main method for testing.  Every class can have a main
@@ -140,10 +143,10 @@ snowman.explore();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testMyCollage();
+    //testMyCollage();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
